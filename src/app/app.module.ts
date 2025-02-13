@@ -4,16 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
-import { TaskItemComponent } from './components/task-item/task-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     TaskFormComponent,
-    TaskItemComponent,
+    ToastComponent,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],

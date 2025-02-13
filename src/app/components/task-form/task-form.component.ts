@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from 'src/app/models/task.model';
 import { TaskService } from 'src/app/services/task.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-task-form',
@@ -12,7 +13,11 @@ export class TaskFormComponent {
   @Output() taskAdded = new EventEmitter<void>();
   taskForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private taskService: TaskService) {
+  constructor(
+    private fb: FormBuilder,
+    private taskService: TaskService,
+    private toastService: ToastService
+  ) {
     this.taskForm = this.fb.group({
       titulo: ['', [Validators.required]],
     });
@@ -27,6 +32,10 @@ export class TaskFormComponent {
       this.taskService.addTask(newTask as Task).subscribe(() => {
         this.taskAdded.emit();
         this.taskForm.reset();
+        this.toastService.showToast(
+          'Tarefa adicionada com sucesso!',
+          'success'
+        );
       });
     }
   }
