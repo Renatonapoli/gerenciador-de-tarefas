@@ -34,4 +34,31 @@ export class TaskListComponent implements OnInit {
       this.loadTasks();
     });
   }
+
+  editTask(task: Task): void {
+    task.editar = true;
+  }
+
+  saveTask(task: Task): void {
+    if (!task.titulo?.trim()) {
+      alert('O título não pode ser vazio');
+      return;
+    }
+
+    const updateTask: Task = {
+      id: task.id,
+      titulo: task.titulo,
+      completo: task.completo,
+    };
+
+    this.taskService.updateTask(updateTask).subscribe(() => {
+      task.editar = false;
+      this.loadTasks();
+    });
+  }
+
+  cancelEdit(task: Task): void {
+    task.editar = false;
+    this.loadTasks();
+  }
 }
