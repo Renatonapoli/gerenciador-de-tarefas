@@ -1,0 +1,41 @@
+<div *ngIf="showToastMessage" class="toast-container fade show">
+  <div
+    *ngIf="toastType === 'success'"
+    class="toast show align-items-center text-white bg-success"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        (click)="hideToast()"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="toastType === 'error'"
+    class="toast show align-items-center text-white bg-danger"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        (click)="hideToast()"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+</div>
