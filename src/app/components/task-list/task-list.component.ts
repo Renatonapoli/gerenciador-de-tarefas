@@ -21,6 +21,10 @@ export class TaskListComponent implements OnInit {
   }
 
   deleteTask(id: number): void {
+    if (!id) {
+      console.error('ID inválido para exclusão', id);
+      return;
+    }
     this.taskService.deleteTask(id).subscribe(() => this.loadTasks());
   }
 }

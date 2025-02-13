@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:300/task';
+  private apiUrl = 'http://localhost:3000/tasks';
 
   constructor(private http: HttpClient) {}
 
@@ -20,10 +20,10 @@ export class TaskService {
   }
 
   updateTask(task: Task): Observable<Task> {
-    return this.http.put(`${this.apiUrl}/${task.id}`, task);
+    return this.http.put<Task>(`${this.apiUrl}/${task.id}`, task);
   }
 
   deleteTask(id: number): Observable<Task> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete<Task>(`${this.apiUrl}/${id}`);
   }
 }
