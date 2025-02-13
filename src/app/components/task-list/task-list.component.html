@@ -20,7 +20,10 @@
           </span>
         </td>
         <td>
-          <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">Excluir</button>
+          <button class="btn btn-success btn-sm " [ngClass]="!task.completo ? 'bg-success' : 'bg-warning'" (click)="toggleTaskStatus(task)">
+            {{ task.completo ? 'Macar como Pendente' : 'Marcar como Concluído' }}
+          </button>
+          <button class="btn btn-danger btn-sm mx-2" (click)="deleteTask(task.id)">Excluir</button>
         </td>
       </tr>
     </tbody>

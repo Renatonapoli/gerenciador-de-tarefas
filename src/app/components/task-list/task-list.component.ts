@@ -27,4 +27,11 @@ export class TaskListComponent implements OnInit {
     }
     this.taskService.deleteTask(id).subscribe(() => this.loadTasks());
   }
+
+  toggleTaskStatus(task: Task): void {
+    const updateTask = { ...task, completo: !task.completo };
+    this.taskService.updateTask(updateTask).subscribe(() => {
+      this.loadTasks();
+    });
+  }
 }
