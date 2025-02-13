@@ -1,16 +1,6 @@
 {
   "tasks": [
     {
-      "id": "aad8",
-      "titulo": "Estudar Typescript",
-      "completo": true
-    },
-    {
-      "id": "b52a",
-      "titulo": "Estudar Angular",
-      "completo": false
-    },
-    {
       "id": "5d8a",
       "titulo": "Estudar Orientação a Objetos",
       "completo": true
