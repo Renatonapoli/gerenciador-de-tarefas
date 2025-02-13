@@ -1,1 +1,26 @@
-<p>task-list works!</p>
+<div class="container mt-4">
+  <h2>Lista de Tarefas</h2>
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.titulo }}</td>
+        <td>
+          <span class="badge" [ngClass]="task.completo ? 'bg-success' : 'bg-warning'">
+            {{ task.completo ? 'Concluído' : 'Pendente' }}
+          </span>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
