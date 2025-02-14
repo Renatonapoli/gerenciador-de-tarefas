@@ -51,11 +51,20 @@ export class TaskListComponent implements OnInit {
 
   editTask(task: Task): void {
     task.editar = true;
+    task.original = { ...task };
   }
 
   saveTask(task: Task): void {
     if (!task.titulo?.trim()) {
       this.toastService.showToast('O título não pode ser vazio!', 'error');
+      return;
+    }
+
+    if (
+      task.titulo === task.original.titulo &&
+      task.completo === task.original.completo
+    ) {
+      task.editar = false;
       return;
     }
 
@@ -67,6 +76,7 @@ export class TaskListComponent implements OnInit {
 
     this.taskService.updateTask(updateTask).subscribe(() => {
       task.editar = false;
+      delete task.original;
       this.loadTasks();
       this.toastService.showToast('Tarefa atualizada com sucesso!', 'success');
     });
@@ -74,6 +84,7 @@ export class TaskListComponent implements OnInit {
 
   cancelEdit(task: Task): void {
     task.editar = false;
+    delete task.original;
     this.loadTasks();
   }
 
