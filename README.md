@@ -1,6 +1,8 @@
-## Lista de Tarefas
+## 📌 Lista de Tarefas
 
-### Este projeto é uma aplicação web para gerenciamento de tarefas, desenvolvida com Angular e Bootstrap. Ele permite adicionar, editar, excluir, marcar tarefas como concluídas e filtrá-las.
+### 📖 Descrição
+
+- Este projeto é uma aplicação web para gerenciamento de tarefas, desenvolvida com Angular e Bootstrap. Ele permite adicionar, editar, excluir, marcar tarefas como concluídas e filtrá-las.
 
 ## 🚀 Funcionalidades
 
