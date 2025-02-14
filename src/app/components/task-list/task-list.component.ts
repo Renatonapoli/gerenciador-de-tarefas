@@ -1,5 +1,5 @@
 import { TaskService } from './../../services/task.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/models/task.model';
 import { ToastService } from 'src/app/services/toast.service';
 
@@ -16,7 +16,8 @@ export class TaskListComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -32,9 +33,12 @@ export class TaskListComponent implements OnInit {
       this.toastService.showToast('ID da tarefa não encontrado!', 'error');
       return;
     }
+
+    this.toastService.showToast('Tarefa excluída com sucesso!', 'success');
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+
     this.taskService.deleteTask(id).subscribe(() => {
-      this.loadTasks();
-      this.toastService.showToast('Tarefa excluída com sucesso!', 'success');
+      this.cdr.detectChanges();
     });
   }
 
