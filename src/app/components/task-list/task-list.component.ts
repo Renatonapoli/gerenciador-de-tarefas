@@ -10,6 +10,7 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
+  filterTask: string = '';
 
   constructor(
     private taskService: TaskService,
@@ -69,5 +70,11 @@ export class TaskListComponent implements OnInit {
   cancelEdit(task: Task): void {
     task.editar = false;
     this.loadTasks();
+  }
+
+  filteredTasks(): Task[] {
+    return this.tasks.filter((task) =>
+      task.titulo.toLowerCase().includes(this.filterTask.toLowerCase())
+    );
   }
 }
