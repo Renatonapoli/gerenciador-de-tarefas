@@ -6,29 +6,29 @@
 
 ## 🚀 Funcionalidades
 
-### 📌 Adicionar tarefas
+- Adicionar tarefas
 
-#### ✅ Marcar tarefas como concluídas ou pendentes
+- Marcar tarefas como concluídas ou pendentes
 
-#### ✏️ Editar tarefas  
+- Editar tarefas  
 
-#### 🗑 Excluir tarefas  
+- Excluir tarefas  
 
-#### 🔍 Filtrar tarefas por título
+- Filtrar tarefas por título
 
-#### 📄 Paginação da lista de tarefas
+- Paginação da lista de tarefas
 
-#### 🔔 Notificações de sucesso e erro
+- Notificações de sucesso e erro
 
-#### 🛠 Tecnologias Utilizadas
+- Tecnologias Utilizadas
 
-#### Angular 15
+- Angular 15
 
-#### TypeScript
+- TypeScript
 
-#### Bootstrap (para estilização)
+- Bootstrap (para estilização)
 
-#### JSON Server (simulação de backend)
+- JSON Server (simulação de backend)
 
 ## 📦 Instalação e Configuração
 
