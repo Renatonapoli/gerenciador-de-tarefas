@@ -48,7 +48,12 @@ O JSON Server simula um backend e roda na porta 3000.
 ```
 ### 4️⃣ Iniciar a aplicação Angular
 ```bash
-ng serve
+npm run start
+Acesse http://localhost:4200/ no navegador.
+```
+### ou, pode rodar em modo dev e terá o frontend e o backend ao mesmo tempo.
+```bash
+npm run dev
 Acesse http://localhost:4200/ no navegador.
 ```
 ## 📂 Estrutura do Projeto
