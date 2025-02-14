@@ -1,6 +1,6 @@
 export class Task {
   id!: number;
-  titulo?: string;
+  titulo!: string;
   completo?: boolean;
   editar?: boolean;
 }

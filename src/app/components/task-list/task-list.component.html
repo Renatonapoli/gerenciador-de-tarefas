@@ -1,6 +1,18 @@
 <app-task-form (taskAdded)="loadTasks()"></app-task-form>
 <app-toast></app-toast>
-<div class="container d-flex mt-4">
+<div class="container d-flex flex-column mt-4">
+  <div class="d-flex align-items-center justify-content-end me-2">
+    <label class="labelFiltrar" for="pesquisar">Filtrar tarefa:</label>
+    <div>
+      <input
+      type="text"
+      class="form-control mx-2"
+      placeholder="Digite sua tarefa..."
+      [(ngModel)]="filterTask"
+      />
+    </div>
+  </div>
+
   <table class="table table-bordered mt-3">
     <thead>
       <tr>
@@ -10,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let task of tasks">
+      <tr *ngFor="let task of paginatedTasks()">
         <td>
           <span *ngIf="!task.editar">{{ task.titulo }}</span>
           <input *ngIf="task.editar" type="text" [(ngModel)]="task.titulo" class="form-control">
@@ -30,6 +42,21 @@
       </tr>
     </tbody>
   </table>
+
+  <nav>
+    <ul class="pagination justify-content-center mb-0">
+      <li class="page-item" [class.disable]="currentPage === 1">
+        <button class="page-link" (click)="prevPage()">Anterior</button>
+      </li>
+      <li class="page-item" *ngFor="let page of totalPagesArray(); let i = index"
+      [class.active]="currentPage === i + 1">
+      <button class="page-link" (click)="goToPage(i+1)">{{ i + 1 }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages()">
+        <button class="page-link" (click)="nextPage()">Próximo</button>
+      </li>
+    </ul>
+  </nav>
 </div>
 
 

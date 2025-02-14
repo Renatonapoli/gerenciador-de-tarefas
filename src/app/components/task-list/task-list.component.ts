@@ -10,6 +10,9 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
+  filterTask: string = '';
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
 
   constructor(
     private taskService: TaskService,
@@ -69,5 +72,41 @@ export class TaskListComponent implements OnInit {
   cancelEdit(task: Task): void {
     task.editar = false;
     this.loadTasks();
+  }
+
+  filteredTasks(): Task[] {
+    return this.tasks.filter((task) =>
+      task.titulo.toLowerCase().includes(this.filterTask.toLowerCase())
+    );
+  }
+
+  paginatedTasks(): Task[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredTasks().slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
+  }
+
+  totalPages(): number {
+    return Math.ceil(this.filteredTasks().length / this.itemsPerPage);
+  }
+
+  totalPagesArray(): number[] {
+    return Array(this.totalPages())
+      .fill(0)
+      .map((_, i) => i + 1);
+  }
+
+  goToPage(page: number) {
+    this.currentPage = page;
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) this.currentPage--;
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages()) this.currentPage++;
   }
 }

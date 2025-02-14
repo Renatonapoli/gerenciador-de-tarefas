@@ -2,7 +2,7 @@
   <form [formGroup]="taskForm" (ngSubmit)="addTask()">
     <div class="input-group mb-3">
       <input type="text" id="titulo" class="form-control" placeholder="Digite sua tarefa..."  formControlName="titulo">
-      <button class="btn btn-primary" type="submit" id="button-addon1" [disabled]="taskForm.invalid">Button</button>
+      <button class="btn btn-primary" type="submit" id="button-addon1" [disabled]="taskForm.invalid">Inserir tarefa</button>
     </div>
   </form>
 </div>
