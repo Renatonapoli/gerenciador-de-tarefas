@@ -1,27 +1,90 @@
-# GerenciadorTarefas
+## Lista de Tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+### Este projeto é uma aplicação web para gerenciamento de tarefas, desenvolvida com Angular e Bootstrap. Ele permite adicionar, editar, excluir, marcar tarefas como concluídas e filtrá-las.
 
-## Development server
+## 🚀 Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 📌 Adicionar tarefas
 
-## Code scaffolding
+✅ Marcar tarefas como concluídas ou pendentes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+✏️ Editar tarefas  
 
-## Build
+🗑 Excluir tarefas  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+🔍 Filtrar tarefas por título
 
-## Running unit tests
+📄 Paginação da lista de tarefas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🔔 Notificações de sucesso e erro
 
-## Running end-to-end tests
+🛠 Tecnologias Utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Angular 15
 
-## Further help
+TypeScript
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Bootstrap (para estilização)
+
+JSON Server (simulação de backend)
+
+## 📦 Instalação e Configuração
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/lista-de-tarefas-angular.git
+cd lista-de-tarefas-angular
+```
+### 2️⃣ Instalar as dependências
+```bash
+npm install
+```
+### 3️⃣ Iniciar o servidor fake (JSON Server)
+```bash
+npm run server
+O JSON Server simula um backend e roda na porta 3000.
+```
+### 4️⃣ Iniciar a aplicação Angular
+```bash
+ng serve
+Acesse http://localhost:4200/ no navegador.
+```
+## 📂 Estrutura do Projeto
+
+lista-de-tarefas-angular/  
+│-- src/  
+│   ├── app/  
+│   │   ├── components/  
+│   │   │   ├── task-form/         
+│   │   │   ├── task-list/         
+│   │   │   ├── toast/             
+│   │   ├── models/  
+│   │   │   ├── task.model.ts      
+│   │   ├── services/  
+│   │   │   ├── task.service.ts    
+│   │   │   ├── toast.service.ts   
+│   ├── assets/  
+│   ├── environments/  
+│   ├── index.html  
+│   ├── styles.scss  
+
+## 📌 Como Contribuir
+
+- Faça um fork do projeto
+
+- Crie uma branch: git checkout -b minha-feature
+
+- Faça suas alterações e commit: git commit -m 'Adiciona nova funcionalidade'
+
+- Envie para o repositório remoto: git push origin minha-feature
+
+- Abra um Pull Request
+
+## 📜 Melhorias Futuras
+🔹 Adicionar filtro de tarefas por status  
+🔹 Implementar paginação   
+🔹 Criar login de usuário para salvar tarefas individuais  
+
+ 📌 Autor  
+ 👨‍💻 Renato Napoli Guimarães  
+ 📌 Desenvolvedor Frontend Sênior especializado em Angular, React e Vue.js
