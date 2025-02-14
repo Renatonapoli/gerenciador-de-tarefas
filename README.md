@@ -30,23 +30,23 @@ Este projeto é um Gerenciador de Tarefas desenvolvido com Angular e JSON-Server
 
 ## 📂 Estrutura do Projeto
 
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── task-form/            
+├── src/  
+│   ├── app/  
+│   │   ├── components/  
+│   │   │   ├── task-form/              
 │   │   │   ├── task-list/            
-│   │   │   ├── toast/                
-│   │   ├── services/
-│   │   │   ├── task.service.ts       
-│   │   ├── models/
-│   │   │   ├── task.model.ts        
-│   ├── assets/
-│   ├── environments/
-│   ├── index.html
-│   ├── styles.scss
-│   ├── db.json                       
-├── package.json
-├── angular.json
+│   │   │   ├── toast/                  
+│   │   ├── services/  
+│   │   │   ├── task.service.ts         
+│   │   ├── models/  
+│   │   │   ├── task.model.ts          
+│   ├── assets/  
+│   ├── environments/  
+│   ├── index.html  
+│   ├── styles.scss   
+│   ├── db.json                         
+├── package.json  
+├── angular.json  
 
 ## 🔧 Configuração e Execução
 
