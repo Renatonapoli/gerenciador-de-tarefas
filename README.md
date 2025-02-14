@@ -43,7 +43,7 @@ npm install
 ```
 ### 4️⃣ Iniciar a aplicação Angular
 ```bash
-ng serve
+npm run start
 Acesse http://localhost:4200/ no navegador.
 ```
 ## 📂 Estrutura do Projeto
