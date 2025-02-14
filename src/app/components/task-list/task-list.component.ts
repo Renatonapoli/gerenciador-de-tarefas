@@ -42,7 +42,6 @@ export class TaskListComponent implements OnInit {
     const updateTask = { ...task, completo: !task.completo };
     this.taskService.updateTask(updateTask).subscribe(() => {
       this.loadTasks();
-      this.toastService.showToast('Status da tarefa atualizado!', 'success');
     });
   }
 
