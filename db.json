@@ -3,46 +3,31 @@
     {
       "id": "110a",
       "titulo": "Estudar Typescript",
-      "completo": true
+      "completo": false
     },
     {
       "id": "da3e",
       "titulo": "Estudar Angular",
-      "completo": true
+      "completo": false
     },
     {
       "id": "ce76",
       "titulo": "Estudar Orientação a Objetos",
+      "completo": true
+    },
+    {
+      "id": "dc26",
+      "titulo": "Estudar Java",
       "completo": false
     },
     {
-      "id": "17b1",
-      "titulo": "sasaasfasfasfs",
+      "id": "0fcc",
+      "titulo": "Estudar Javascript",
       "completo": false
     },
     {
-      "id": "984a",
-      "titulo": "fasfasfasff",
-      "completo": false
-    },
-    {
-      "id": "05f8",
-      "titulo": "asfasfasfasfaf",
-      "completo": false
-    },
-    {
-      "id": "e455",
-      "titulo": "fafafsfasfasf",
-      "completo": false
-    },
-    {
-      "id": "8a0a",
-      "titulo": "fasfasfasasfsfsf",
-      "completo": false
-    },
-    {
-      "id": "796d",
-      "titulo": "asfasfasfasf",
+      "id": "8dba",
+      "titulo": "Estudar HTML e CSS",
       "completo": false
     }
   ]
