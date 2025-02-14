@@ -12,7 +12,7 @@ export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
   filterTask: string = '';
   currentPage: number = 1;
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 10;
 
   constructor(
     private taskService: TaskService,

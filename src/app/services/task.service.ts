@@ -1,29 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../models/task.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:3000/tasks';
+  private storageKey = 'tasks';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
+
+  private getTasksFromStorage(): Task[] {
+    const tasks = localStorage.getItem(this.storageKey);
+    return tasks ? JSON.parse(tasks) : [];
+  }
+
+  private saveTasksStorage(tasks: Task[]): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(tasks));
+  }
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
+    return of(this.getTasksFromStorage());
   }
 
   addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task);
+    const tasks = this.getTasksFromStorage();
+    task.id = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
+    tasks.push(task);
+    this.saveTasksStorage(tasks);
+    return of(task);
   }
 
-  updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.apiUrl}/${task.id}`, task);
+  updateTask(updateTask: Task): Observable<Task> {
+    const tasks = this.getTasksFromStorage();
+    const taskIndex = tasks.findIndex((task) => task.id === updateTask.id);
+    if (taskIndex > -1) {
+      tasks[taskIndex] = updateTask;
+      this.saveTasksStorage(tasks);
+    }
+    return of(updateTask);
   }
 
-  deleteTask(id: number): Observable<Task> {
-    return this.http.delete<Task>(`${this.apiUrl}/${id}`);
+  deleteTask(id: number): Observable<void> {
+    const tasks = this.getTasksFromStorage();
+    const updateTasks = tasks.filter((task) => task.id !== id);
+    this.saveTasksStorage(updateTasks);
+    return of();
   }
 }
