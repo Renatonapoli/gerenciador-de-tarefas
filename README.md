@@ -20,7 +20,7 @@
 
 - Notificações de sucesso e erro
 
-- Tecnologias Utilizadas
+## 📌  Tecnologias Utilizadas
 
 - Angular 15
 
