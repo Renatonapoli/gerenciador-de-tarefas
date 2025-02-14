@@ -19,7 +19,7 @@ export class ToastComponent {
 
       setTimeout(() => {
         this.hideToast();
-      }, 3000);
+      }, 4000);
     });
   }
 
