@@ -82,9 +82,7 @@ lista-de-tarefas-angular/
 
 - Abra um Pull Request
 
-## 📜 Melhorias Futuras
-🔹 Adicionar filtro de tarefas por status  
-🔹 Implementar paginação   
+## 📜 Melhorias Futuras 
 🔹 Criar login de usuário para salvar tarefas individuais  
 
  📌 Autor  
